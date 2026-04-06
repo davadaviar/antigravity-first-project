@@ -18,16 +18,16 @@ export function HeroSection({ data }: { data: any }) {
     <section ref={ref} className={styles.hero}>
       <motion.div style={{ y }} className={styles.heroBg} />
       <div className={`container ${styles.heroContent}`}>
-        <motion.h1 
+        <motion.h1
           className={styles.heroTitle}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {firstLines && <>{firstLines}<br/></>}
+          {firstLines && <>{firstLines}<br /></>}
           <span>{lastLine}</span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           className={styles.heroSubtitle}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export function HeroSection({ data }: { data: any }) {
         >
           {data.heroSubtitle}
         </motion.p>
-        <motion.button 
+        <motion.button
           className="btn-primary hover-lift"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export function TimelineSection({ items }: { items: any[] }) {
         <h2 className={styles.timelineTitle}>Evolution of the craft</h2>
         <div className={styles.timelineList}>
           {items.map((item, i) => (
-            <motion.div 
+            <motion.div
               key={item.id}
               className={styles.timelineItem}
               initial={{ opacity: 0, x: -20 }}
@@ -80,7 +80,7 @@ export function MarqueeSection({ clients }: { clients: any[] }) {
   // Infinite scroll
   return (
     <section className={styles.marqueeContainer}>
-      <motion.div 
+      <motion.div
         className={styles.marqueeTrack}
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 20, ease: "linear", repeat: Infinity }}
@@ -102,11 +102,11 @@ export function PortfolioSection({ items }: { items: any[] }) {
       <div className="container">
         <div className={styles.portfolioHeader}>
           <h2 className={styles.portfolioTitle}>Selected Works</h2>
-          <span className="text-accent" style={{fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em'}}>VIEW ALL EXPLORE ↗</span>
+          <span className="text-accent" style={{ fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em' }}>VIEW ALL EXPLORE ↗</span>
         </div>
         <div className={styles.portfolioGrid}>
           {items.map((item, i) => (
-            <motion.div 
+            <motion.div
               key={item.id}
               className={styles.card}
               initial={{ opacity: 0, y: 30 }}
@@ -119,8 +119,8 @@ export function PortfolioSection({ items }: { items: any[] }) {
               <h3 className={styles.cardTitle}>{item.title}</h3>
               {item.description && <p className={styles.cardDesc}>{item.description}</p>}
               {item.imageUrl && (
-                <div 
-                  className={styles.cardImage} 
+                <div
+                  className={styles.cardImage}
                   style={{ backgroundImage: `url(${item.imageUrl})` }}
                 />
               )}
@@ -140,8 +140,8 @@ export function TestimonialsSection({ items }: { items: any[] }) {
       </div>
       <div className={styles.testimonials}>
         {items.map((item, i) => (
-          <motion.div 
-            key={item.id} 
+          <motion.div
+            key={item.id}
             className={styles.testCard}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -161,13 +161,13 @@ export function TestimonialsSection({ items }: { items: any[] }) {
 export function FooterSection({ data }: { data: any }) {
   return (
     <section id="contact" className={styles.footerSection}>
-      <motion.div 
+      <motion.div
         className={styles.giantText}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        {data.footerHeadline1} <br/>
+        {data.footerHeadline1} <br />
         <span>{data.footerHeadline2}</span>
       </motion.div>
       <div className="container">
